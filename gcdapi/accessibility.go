@@ -6,7 +6,7 @@ package gcdapi
 
 import (
 	"encoding/json"
-	"github.com/wirepair/gcd/gcdmessage"
+	"github.com/zurrix/gcd/gcdmessage"
 )
 
 // A single source for a computed AX property.

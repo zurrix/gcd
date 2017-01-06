@@ -2,7 +2,7 @@ package main
 
 import (
 	"flag"
-	"github.com/wirepair/gcd"
+	"github.com/zurrix/gcd"
 	"log"
 	"runtime"
 )

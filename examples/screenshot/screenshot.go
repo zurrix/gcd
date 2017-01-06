@@ -4,7 +4,7 @@ import (
 	"encoding/base64"
 	"flag"
 	"fmt"
-	"github.com/wirepair/gcd"
+	"github.com/zurrix/gcd"
 	"log"
 	"net/url"
 	"os"

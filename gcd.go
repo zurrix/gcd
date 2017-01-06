@@ -104,7 +104,7 @@ func (c *Gcd) AddEnvironmentVars(vars []string) {
 	c.env = append(c.env, vars...)
 }
 
-// Starts the process
+// StartProcess Starts the process
 // exePath - the path to the executable
 // userDir - the user directory to start from so we get a fresh profile
 // port - The port to listen on.
@@ -113,6 +113,7 @@ func (c *Gcd) StartProcess(exePath, userDir, port string) {
 	c.addr = fmt.Sprintf("%s:%s", c.host, c.port)
 	c.apiEndpoint = fmt.Sprintf("http://%s/json", c.addr)
 	// profile directory
+	c.flags = append(c.flags, "--window-size=1024x768")
 	c.flags = append(c.flags, fmt.Sprintf("--user-data-dir=%s", userDir))
 	// debug port to use
 	c.flags = append(c.flags, fmt.Sprintf("--remote-debugging-port=%s", port))
@@ -120,6 +121,7 @@ func (c *Gcd) StartProcess(exePath, userDir, port string) {
 	c.flags = append(c.flags, "--no-first-run")
 	// bypass default browser check
 	c.flags = append(c.flags, "--no-default-browser-check")
+	c.flags = append(c.flags, "--no-sandbox")
 
 	c.chromeCmd = exec.Command(exePath, c.flags...)
 	// add custom environment variables.
@@ -272,7 +274,7 @@ func (c *Gcd) probeDebugPort() {
 				return
 			}
 		case <-timeoutTicker.C:
-			log.Fatalf("Unable to contact debugger at %s after %d seconds, gave up", c.apiEndpoint, c.timeout)
+			// log.Fatalf("Unable to contact debugger at %s after %d seconds, gave up", c.apiEndpoint, c.timeout)
 		}
 	}
 }

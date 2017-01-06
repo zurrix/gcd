@@ -6,7 +6,7 @@
 package gcdapi
 
 import (
-	"github.com/wirepair/gcd/gcdmessage"
+	"github.com/zurrix/gcd/gcdmessage"
 {{if len (.Imports) }}{{range $import := .Imports}}"{{$import}}"{{end}}
 {{end}}
 )

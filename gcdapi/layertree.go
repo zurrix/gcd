@@ -6,7 +6,7 @@ package gcdapi
 
 import (
 	"encoding/json"
-	"github.com/wirepair/gcd/gcdmessage"
+	"github.com/zurrix/gcd/gcdmessage"
 )
 
 // Rectangle where scrolling happens on the main thread.

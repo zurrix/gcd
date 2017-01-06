@@ -3,7 +3,7 @@ This is primarly an auto-generated client library for communicating with a Googl
 
 Because I'm lazy and there are hundereds of different custom types and API methods, this library has been automatically generated using their [protocol.json](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/devtools/protocol.json&q=protocol.json&sq=package:chromium&type=cs). 
 
-The [gcdapigen](https://github.com/wirepair/gcd/tree/master/gcdapigen) program was created to generate types, event types and commands for gcd.
+The [gcdapigen](https://github.com/zurrix/gcd/tree/master/gcdapigen) program was created to generate types, event types and commands for gcd.
 
 # Changelog (2016)
 June: Updated to the latest protocol.json, gcdapigen will download the js_protocol and browser_protocol json files from chromium repositories. It will also fix them up and merge them into a single file and output it. 
@@ -12,7 +12,7 @@ Note that several API endpoints have been removed and method calls have changed 
 February: I created a new library for actual automation purposes. If you want something with more functionality and more usability I suggest checking out [autogcd](https://github.com/wirepair/autogcd).
 
 ## Dependencies
-gcd requires the [gcdapi](https://github.com/wirepair/gcd/tree/master/gcdapi) and [gcdmessage](https://github.com/wirepair/gcd/tree/master/gcdmessage) packages. gcdapi is the auto-generated API. gcdmessage is the glue between gcd and gcdapi so we can keep the packages clean. 
+gcd requires the [gcdapi](https://github.com/zurrix/gcd/tree/master/gcdapi) and [gcdmessage](https://github.com/zurrix/gcd/tree/master/gcdmessage) packages. gcdapi is the auto-generated API. gcdmessage is the glue between gcd and gcdapi so we can keep the packages clean. 
 
 ## The API
 The API consists of of synchronous requests, asynchronous requests / events. Synchronous requests are handled by using non-buffered channels and methods can be called and will return once the value is available. Events are handled by subscribing the response method type and calling the API's "Enable()" such as:
@@ -40,14 +40,14 @@ The API consists of of synchronous requests, asynchronous requests / events. Syn
 ```
 
 ## Usage
-For a full list of api methods, types, event types & godocs: [Documentation](https://godoc.org/github.com/wirepair/gcd/gcdapi)
+For a full list of api methods, types, event types & godocs: [Documentation](https://godoc.org/github.com/zurrix/gcd/gcdapi)
 
 Loading a page using the Page API.
 ```Go
 package main
 
 import (
-	"github.com/wirepair/gcd"
+	"github.com/zurrix/gcd"
 	"log"
 	"sync"
 )
@@ -89,7 +89,7 @@ Getting a document from a target.
 package main
 
 import (
-	"github.com/wirepair/gcd"
+	"github.com/zurrix/gcd"
 	"log"
 )
 
@@ -118,7 +118,7 @@ package main
 import (
 	"encoding/base64"
 	"fmt"
-	"github.com/wirepair/gcd"
+	"github.com/zurrix/gcd"
 	"log"
 	"net/url"
 	"os"

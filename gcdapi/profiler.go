@@ -6,7 +6,7 @@ package gcdapi
 
 import (
 	"encoding/json"
-	"github.com/wirepair/gcd/gcdmessage"
+	"github.com/zurrix/gcd/gcdmessage"
 )
 
 // CPU Profile node. Holds callsite information, execution statistics and child nodes.
