@@ -124,6 +124,8 @@ func (c *Gcd) StartProcess(exePath, userDir, port string) {
 	c.flags = append(c.flags, "--no-default-browser-check")
 	c.flags = append(c.flags, "--no-sandbox")
 
+	println("start process in linux")
+	println(exePath, c.flags)
 	c.chromeCmd = exec.Command(exePath, c.flags...)
 	// add custom environment variables.
 	c.chromeCmd.Env = os.Environ()
