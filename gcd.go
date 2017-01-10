@@ -127,7 +127,7 @@ func (c *Gcd) StartProcess(exePath, userDir, port string) {
 	println("start process in linux")
 	println(exePath)
 	for index := 0; index < len(c.flags); index++ {
-		println(c.flags[0])
+		println(c.flags[index])
 	}
 	c.chromeCmd = exec.Command(exePath, c.flags...)
 	// add custom environment variables.
