@@ -114,6 +114,7 @@ func (c *Gcd) StartProcess(exePath, userDir, port string) {
 	c.apiEndpoint = fmt.Sprintf("http://%s/json", c.addr)
 	// profile directory
 	c.flags = append(c.flags, "--window-size=1024x768")
+	c.flags = append(c.flags, "--disable-gpu")
 	c.flags = append(c.flags, fmt.Sprintf("--user-data-dir=%s", userDir))
 	// debug port to use
 	c.flags = append(c.flags, fmt.Sprintf("--remote-debugging-port=%s", port))
