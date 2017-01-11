@@ -113,17 +113,23 @@ func (c *Gcd) StartProcess(exePath, userDir, port string) {
 	c.addr = fmt.Sprintf("%s:%s", c.host, c.port)
 	c.apiEndpoint = fmt.Sprintf("http://%s/json", c.addr)
 	// profile directory
-	c.flags = append(c.flags, "--disable-gpu")
-	c.flags = append(c.flags, "--window-size=1024x768")
 
-	// c.flags = append(c.flags, "--user-data-dir="+userDir)
-	// debug port to use
-	c.flags = append(c.flags, "--remote-debugging-port="+port)
-	// bypass first run check
-	// c.flags = append(c.flags, "--no-first-run")
-	// bypass default browser check
-	// c.flags = append(c.flags, "--no-default-browser-check")
-	// c.flags = append(c.flags, "--no-sandbox")
+	/*
+		c.flags = append(c.flags, "--disable-gpu")
+		c.flags = append(c.flags, "--window-size=1024x768")
+
+		// c.flags = append(c.flags, "--user-data-dir="+userDir)
+		// debug port to use
+		c.flags = append(c.flags, "--remote-debugging-port="+port)
+		// bypass first run check
+		// c.flags = append(c.flags, "--no-first-run")
+		// bypass default browser check
+		// c.flags = append(c.flags, "--no-default-browser-check")
+		// c.flags = append(c.flags, "--no-sandbox")
+
+	*/
+
+	c.flags = []string{"--disable-gpu", "--remote-debugging-port=9222"}
 
 	// println("start process in linux, print flags")
 	// println(exePath)
