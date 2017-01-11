@@ -129,7 +129,7 @@ func (c *Gcd) StartProcess(exePath, userDir, port string) {
 
 	*/
 
-	c.flags = []string{"--disable-gpu", "--remote-debugging-port=" + port}
+	c.flags = []string{"--disable-gpu", "--window-size=1024x768", "--remote-debugging-port=" + port}
 
 	// println("start process in linux, print flags")
 	// println(exePath)
