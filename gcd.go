@@ -115,14 +115,14 @@ func (c *Gcd) StartProcess(exePath, userDir, port string) {
 	// profile directory
 	c.flags = append(c.flags, "--window-size=1024x768")
 	c.flags = append(c.flags, "--disable-gpu")
-	c.flags = append(c.flags, "--user-data-dir="+userDir)
+	// c.flags = append(c.flags, "--user-data-dir="+userDir)
 	// debug port to use
 	c.flags = append(c.flags, "--remote-debugging-port="+port)
 	// bypass first run check
-	c.flags = append(c.flags, "--no-first-run")
+	// c.flags = append(c.flags, "--no-first-run")
 	// bypass default browser check
-	c.flags = append(c.flags, "--no-default-browser-check")
-	c.flags = append(c.flags, "--no-sandbox")
+	// c.flags = append(c.flags, "--no-default-browser-check")
+	// c.flags = append(c.flags, "--no-sandbox")
 
 	// println("start process in linux, print flags")
 	// println(exePath)
