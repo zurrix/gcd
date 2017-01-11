@@ -115,9 +115,9 @@ func (c *Gcd) StartProcess(exePath, userDir, port string) {
 	// profile directory
 	c.flags = append(c.flags, "--window-size=1024x768")
 	c.flags = append(c.flags, "--disable-gpu")
-	c.flags = append(c.flags, fmt.Sprintf("--user-data-dir=%s", userDir))
+	c.flags = append(c.flags, "--user-data-dir="+userDir)
 	// debug port to use
-	c.flags = append(c.flags, fmt.Sprintf("--remote-debugging-port=%s", port))
+	c.flags = append(c.flags, "--remote-debugging-port="+port)
 	// bypass first run check
 	c.flags = append(c.flags, "--no-first-run")
 	// bypass default browser check
