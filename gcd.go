@@ -129,7 +129,7 @@ func (c *Gcd) StartProcess(exePath, userDir, port string) {
 
 	*/
 
-	c.flags = []string{"--disable-gpu", "--remote-debugging-port=9222"}
+	c.flags = []string{"--disable-gpu", "--remote-debugging-port=" + port}
 
 	// println("start process in linux, print flags")
 	// println(exePath)
@@ -195,6 +195,7 @@ func (c *Gcd) GetNewTargets(knownIds map[string]struct{}) ([]*ChromeTarget, erro
 
 	body, errRead := ioutil.ReadAll(resp.Body)
 	if errRead != nil {
+
 		return nil, &GcdBodyReadErr{Message: errRead.Error()}
 	}
 
