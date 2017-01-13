@@ -137,6 +137,9 @@ func (c *Gcd) StartProcess(exePath, userDir, port string) {
 	// 	println(c.flags[index])
 	// }
 	c.chromeCmd = exec.Command(exePath, c.flags...)
+
+	c.chromeCmd.Stdout = os.Stdout
+	c.chromeCmd.Stderr = os.Stderr
 	// add custom environment variables.
 	c.chromeCmd.Env = os.Environ()
 	c.chromeCmd.Env = append(c.chromeCmd.Env, c.env...)
